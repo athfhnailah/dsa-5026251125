@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-
         List<String> playlist = new ArrayList<>();
         Scanner scanner1 = new Scanner(
             Main.class.getResourceAsStream("playlist.txt")
