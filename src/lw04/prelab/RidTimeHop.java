@@ -1,0 +1,60 @@
+package lw04.prelab;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class RidTimeHop {
+    static void insertionSort(int[] a, int passes) {
+        for (int i = 1; i <= passes; i++) {
+            int key = a[i];
+            int j = i - 1;
+            while (j >= 0 && a[j] < key) {
+                a[j + 1] = a[j];
+                j--;
+            }
+            a[j + 1] = key;
+        }
+    }
+
+    static int linearSearch(int[] a, int target) {
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner sc = new Scanner(RidTimeHop.class.getResourceAsStream("branches.txt"));
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+
+        int m = sc.nextInt();
+        int[] targets = new int[m];
+        for (int i = 0; i < m; i++) {
+            targets[i] = sc.nextInt();
+        }
+        sc.close();
+
+        insertionSort(a, 3);
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i]);
+            if (i < n - 1) System.out.print(" ");
+        }
+        System.out.println();
+
+        for (int t : targets) {
+            int idx = linearSearch(a, t);
+            if (idx != -1) {
+                System.out.println(t + ": FOUND at index " + idx);
+            } else {
+                System.out.println(t + ": NOT FOUND");
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@ public class CountVote {
             count.put(c, count.getOrDefault(c, 0) + 1);
         }
 
-        Set<Character> set = count.keySet();
+        Set<Character> set = new HashSet<>(count.keySet());
         char winner = '\0';
         int maxVote = 0;
 
@@ -22,14 +22,11 @@ public class CountVote {
                 winner = c;
             }
         }
-
-        // Cetak hasil
         System.out.println(winner + " " + maxVote);
     }
-
     public static void main(String[] args) {
-        countVote("AABCAADE");       // Output: A 4
-        countVote("ABBCDKLMDDDD");   // Output: D 5
-        countVote("XWZSXABCDE");     // Output: X 2
+        countVote("AABCAADE");      
+        countVote("ABBCDKLMDDDD");   
+        countVote("XWZSXABCDE");     
     }
 }

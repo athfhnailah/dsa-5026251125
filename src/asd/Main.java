@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Main {
     public static void main (String [] args) {
-        Path filepath = Path.of("word.txt");
+        Path filepath = Path.of("words.txt");
 
         List<String> words = null;
 
