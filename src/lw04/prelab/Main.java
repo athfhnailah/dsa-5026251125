@@ -1,10 +1,7 @@
 package lw04.prelab;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-public class RidTimeHop {
+public class Main {
     static void insertionSort(int[] a, int passes) {
         for (int i = 1; i <= passes; i++) {
             int key = a[i];
@@ -25,8 +22,8 @@ public class RidTimeHop {
         }
         return -1;
     }
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner sc = new Scanner(RidTimeHop.class.getResourceAsStream("branches.txt"));
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(Main.class.getResourceAsStream("branches.txt"));
         int n = sc.nextInt();
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
