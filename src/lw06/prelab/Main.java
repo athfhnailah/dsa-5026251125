@@ -21,12 +21,12 @@ public class Main {
             return false;
         }
 
-        if (root.data == target) {
+        if (root.data == target) { //cek apakah data yang dicari sama dengan data pada node saat ini
             return true;
         } else if (target < root.data) {
-            return search(root.left, target);
+            return search(root.left, target); //kalau lebih kecil, ke kiri
         } else {
-            return search(root.right, target);
+            return search(root.right, target); //
         }
     }
 
